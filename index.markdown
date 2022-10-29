@@ -77,5 +77,6 @@ Obviously, templating the article link how we did is likely to end up broken (pa
 
 If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. If you don't set the baseurl, you might find out that you get a 404 error, or a redirect to something else. In this example we set it to `baseurl: "/dummy-website-2"`. To view the site locally, you may wish it to run it using the `baseurl` flag: `bundle exec jekyll serve`
 
+<!-- 
 - [Link to About](about)
-- [Link to Post]({% post_url 2022-10-29-welcome-to-jekyll %})
+- [Link to Post]({% post_url 2022-10-29-welcome-to-jekyll %}.html) -->
