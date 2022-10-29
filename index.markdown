@@ -56,7 +56,9 @@ github: # the following URLS were found by looking in the _site folder built
 
 4. Change the layout of the index, about, and post page to use our new `my_layout` layout. Serve the page locally again and check out the results.
 
-5. Okay push the changes to GitHub and see how it goes. You might find out that you get a 404 error. If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. In this example we set it to `baseurl: "/dummy-website-2"`.
+5. Okay push the changes to GitHub and see how it goes. 
+
+
 
 ### Some Explanations
 The {% raw %}`{% %}`{% endraw %} and {% raw %}`{{ }}`{% endraw %} is [Liquid](https://shopify.github.io/liquid/basics/introduction/) syntax. The {% raw %}`{% %}`{% endraw %} are tags and these create logic and control flows. The {% raw %}`{{ }}`{% endraw %} are objects and these are [variables](https://jekyllrb.com/docs/variables/) that contain content will be displayed on the page. Liquid also has a lot of in-built filters to help do things, and Jekyll as provided several additional handy [filters](https://jekyllrb.com/docs/liquid/filters/). The `relative_url` is one such filter added by Jekyll, and it tells that the URL held within the variables are relative to the home directory.
@@ -67,4 +69,12 @@ Depending on your OCD level. You may not wish to overwrite the three variables c
 - {% raw %}`{{ site.url }}/about`{% endraw %} for our about page link.
 - {% raw %}`{{ site.url }}/jekyll/update/2022/10/29/welcome-to-jekyll`{% endraw %} for our about page link.
 
+Or if this is a project site (which this example is) we could use the following. We would need to have set the baseurl (more details below).
+
+- {% raw %}`{{ site.url }}{{ site.baseurl }}/`{% endraw %} for our home page link
+- {% raw %}`{{ site.url }}{{ site.baseurl }}/about`{% endraw %} for our about page link.
+- {% raw %}`{{ site.url }}{{ site.baseurl }}/jekyll/update/2022/10/29/welcome-to-jekyll`{% endraw %} for our about page link.
+
 Obviously, templating the article link how we did is likely to end up broken (page is likely to be moved, renamed, etc). However, using this sort of technique for pages unlikely to change location within the website structure (e.g., about me, publication lists, etc.) is okay.
+
+If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. If you don't set the baseurl, you might find out that you get a 404 error, or a redirect to something else. In this example we set it to `baseurl: "/dummy-website-2"`. To view the site locally, you may wish it to run it using the `baseurl` flag: `bundle exec jekyll serve`
