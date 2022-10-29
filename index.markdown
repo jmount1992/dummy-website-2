@@ -48,17 +48,20 @@ github: # the following URLS were found by looking in the _site folder built
 
 2. Serve the page locally, and try clicking on these buttons. You will find they work if the URL is initially `http://127.0.0.1:4000/` but if the URL is anything else the links don't work. We can easily fix this!
 
-3. If you read the [Jekyll Theme Documentation](https://jekyllrb.com/docs/themes/) you will see that we can create our own layouts, or overwrite the standard theme layouts. Create a folder called `_layouts` and create a new layout file in this folder called `my_layout.html`. Open up this file and perform the following:
+3. If you read the [Jekyll Theme Documentation](https://jekyllrb.com/docs/themes/) you will see that we can create our own layouts, or overwrite the standard theme layouts. Create a folder called `_layouts` and create a new layout file in this folder called `my_layout.html`. Open up this file and perform the following (see explanations below for reasoning/details):
     1. Copy the default layout into the `my_layout.html` file by going [here](https://raw.githubusercontent.com/pages-themes/cayman/master/_layouts/default.html) and copying the contents (warning this is the default layout for the Cayman theme, if you chose a different theme go to its default)
     2. Change line 22 to: `<a href="{{ site.github.repository_url | relative_url }}" class="btn">Home</a>`
     3. Change line 25 to: `<a href="{{ site.github.zip_url | relative_url }}" class="btn">About Me</a>`
     4. Change line 26 to: `<a href="{{ site.github.tar_url | relative_url }}" class="btn">An Article</a>`
 
-The {% raw %}`{% %}`{% endraw %} and {% raw %}`{{ }}`{% endraw %} is [Liquid](https://shopify.github.io/liquid/basics/introduction/) syntax. The {% raw %}`{% %}`{% endraw %} are tags and these create logic and control flows. The {% raw %}`{{ }}`{% endraw %} are objects and these are [variables](https://jekyllrb.com/docs/variables/) that contain content will be displayed on the page. Liquid also has a lot of in-built filters to help do things, and Jekyll as provided several additional handy [filters](https://jekyllrb.com/docs/liquid/filters/). The `relative_url` is one such filter added by Jekyll, and it tells that the URL held within the variables are relative to the home directory.
-
 4. Change the layout of the index, about, and post page to use our new `my_layout` layout. Serve the page locally again and check out the results.
 
-Now, depending on your OCD level. You may not wish to overwrite the three variables created and injected by GitHub Pages. Instead you may wish to create your own, more appropriate variables. Creating [Jekyll variables](https://jekyllrb.com/docs/variables/) are fairly straight forward. However, if you read that documentation you will notice we instead could have used the following instead of overwriting variables:
+5. Okay push the changes to GitHub and see how it goes. You might find out that you get a 404 error. If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. In this example we set it to `baseurl: "/dummy-website-2"`.
+
+### Some Explanations
+The {% raw %}`{% %}`{% endraw %} and {% raw %}`{{ }}`{% endraw %} is [Liquid](https://shopify.github.io/liquid/basics/introduction/) syntax. The {% raw %}`{% %}`{% endraw %} are tags and these create logic and control flows. The {% raw %}`{{ }}`{% endraw %} are objects and these are [variables](https://jekyllrb.com/docs/variables/) that contain content will be displayed on the page. Liquid also has a lot of in-built filters to help do things, and Jekyll as provided several additional handy [filters](https://jekyllrb.com/docs/liquid/filters/). The `relative_url` is one such filter added by Jekyll, and it tells that the URL held within the variables are relative to the home directory.
+
+Depending on your OCD level. You may not wish to overwrite the three variables created and injected by GitHub Pages. Instead you may wish to create your own, more appropriate variables. Creating [Jekyll variables](https://jekyllrb.com/docs/variables/) are fairly straight forward. However, if you read that documentation you will notice we instead could have used the following instead of overwriting variables:
 
 - {% raw %}`{{ site.url }}`{% endraw %} for our home page link
 - {% raw %}`{{ site.url }}/about`{% endraw %} for our about page link.

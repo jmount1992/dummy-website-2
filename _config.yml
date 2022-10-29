@@ -22,7 +22,7 @@ title: Dummy Website 2
 email: jmount1992@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is a dummy website that is part of James Mount's website building guide.
-# baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/dummy-website-2" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jmount1992
 github_username:  jmount1992
