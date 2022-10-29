@@ -19,6 +19,7 @@ We are using [Dummy-Website-1 Repo](github.com/jmount1992/dummy-website-1) as a 
     - Remove or comment out the line: `theme: minima`
     - Add the line: `remote_theme: cayman`
     - Change the list of plugins to only include: `jekyll-remote-theme`
+    - Add the timezone: `Australia/Brisbane`
 4. In the `index.markdown` add links to the About and Post pages. Can check out the [repo](https://github.com/jmount1992/dummy-website-2) if you are unsure on how to do this.
 6. Serve the website locally.
     - You will probably find the theme is not applied.
@@ -76,7 +77,3 @@ Or if this is a project site (which this example is) we could use the following.
 Obviously, templating the article link how we did is likely to end up broken (page is likely to be moved, renamed, etc). However, using this sort of technique for pages unlikely to change location within the website structure (e.g., about me, publication lists, etc.) is okay.
 
 If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. If you don't set the baseurl, you might find out that you get a 404 error, or a redirect to something else. In this example we set it to `baseurl: "/dummy-website-2"`. To view the site locally, you may wish it to run it using the `baseurl` flag: `bundle exec jekyll serve`
-
-<!-- 
-- [Link to About](about)
-- [Link to Post]({% post_url 2022-10-29-welcome-to-jekyll %}.html) -->
