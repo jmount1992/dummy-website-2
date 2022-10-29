@@ -28,7 +28,7 @@ twitter_username: jmount1992
 github_username:  jmount1992
 
 # Build settings
-theme: hacker
+theme: cayman
 plugins:
   - jekyll-feed
 
