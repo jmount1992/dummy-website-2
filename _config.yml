@@ -31,14 +31,15 @@ github_username:  jmount1992
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jeykll-feed
 
 # Cayman Theme Config Options
 show_downloads: true
 
-github:
-  repository_url: index.html
-  zip_url: about
-  tar_url: jekyll/update/2022/10/29/welcome-to-jekyll
+# github:
+#   repository_url: index.html
+#   zip_url: about
+#   tar_url: jekyll/update/2022/10/29/welcome-to-jekyll
 
 # Exclude from processing.
 # The following items will not be processed, by default.

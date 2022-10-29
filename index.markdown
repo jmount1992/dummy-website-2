@@ -43,7 +43,7 @@ github: # the following URLS were found by looking in the _site folder built
   tar_url: jekyll/update/2022/10/29/welcome-to-jekyll
 ```
     - These keys were found by reading the theme's documentation and looking at the `_layouts/default.html` [file](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html#L22).
-    - The valus were found by looking in the locally built _site folder and finding the path to the desired files. Note the `.html` extension for each is dropped. 
+    - The values were found by looking in the locally built _site folder and finding the path to the desired files. Note the `.html` extension for each is dropped. Or can create a standard markdown link, push to GitHub pages, and get the URL.
     - These three variables are injected by GitHub pages.
 
 2. Serve the page locally, and try clicking on these buttons. You will find they work if the URL is initially `http://127.0.0.1:4000/` but if the URL is anything else the links don't work. We can easily fix this!
@@ -57,8 +57,6 @@ github: # the following URLS were found by looking in the _site folder built
 4. Change the layout of the index, about, and post page to use our new `my_layout` layout. Serve the page locally again and check out the results.
 
 5. Okay push the changes to GitHub and see how it goes. 
-
-
 
 ### Some Explanations
 The {% raw %}`{% %}`{% endraw %} and {% raw %}`{{ }}`{% endraw %} is [Liquid](https://shopify.github.io/liquid/basics/introduction/) syntax. The {% raw %}`{% %}`{% endraw %} are tags and these create logic and control flows. The {% raw %}`{{ }}`{% endraw %} are objects and these are [variables](https://jekyllrb.com/docs/variables/) that contain content will be displayed on the page. Liquid also has a lot of in-built filters to help do things, and Jekyll as provided several additional handy [filters](https://jekyllrb.com/docs/liquid/filters/). The `relative_url` is one such filter added by Jekyll, and it tells that the URL held within the variables are relative to the home directory.
@@ -78,3 +76,6 @@ Or if this is a project site (which this example is) we could use the following.
 Obviously, templating the article link how we did is likely to end up broken (page is likely to be moved, renamed, etc). However, using this sort of technique for pages unlikely to change location within the website structure (e.g., about me, publication lists, etc.) is okay.
 
 If this is a project page website (see [here](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites) for defintions) we need to make sure we set the `baseurl` in `_config.yml`. If you don't set the baseurl, you might find out that you get a 404 error, or a redirect to something else. In this example we set it to `baseurl: "/dummy-website-2"`. To view the site locally, you may wish it to run it using the `baseurl` flag: `bundle exec jekyll serve`
+
+- [Link to About](about)
+- [Link to Post]({% post_url 2022-10-29-welcome-to-jekyll %})
